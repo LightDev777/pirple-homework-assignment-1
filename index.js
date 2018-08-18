@@ -108,7 +108,7 @@ var handlers = {};
 
 // ping handler
 handlers.ping = function(data, callback) {
-  callback(200, message);
+  callback(200);
 };
 
 // handler to send a 'hello world' message
