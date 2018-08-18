@@ -113,10 +113,14 @@ handlers.ping = function(data, callback) {
 
 // handler to send a 'hello world' message
 handlers.sayhi = function(data, callback) {
-  var message = {
-    'message' : 'Hello World!'
-  };
-  callback(200, message);
+  var message = {};
+  if(data.method == 'post') {
+    message.say = 'Hello World!';
+    callback(200, message);
+  } else {
+    message.say = 'Not using the correct method for this';
+    callback(404, message);
+  }
 };
 
 // not found handler
